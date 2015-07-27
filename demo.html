@@ -1,0 +1,32 @@
+<html>
+<head>
+    <!-- <script src="src/dijstra_core.js" type="text/javascript"></script> -->
+	<script src="build/dijstra_core_min.js" type="text/javascript"></script>
+</head>
+<body>
+<script>
+
+function DocWrite(str)
+{
+    document.write(str);
+    document.write("<br>");
+}
+
+//有向无环图
+var DAG = {
+  "welecome": {"adjacentTo": ["workmode"]},
+  "workmode": {"adjacentTo": ["WAN", "WLAN"]},
+  "WAN": {"adjacentTo": ["WLAN"]},
+  "WLAN": {"adjacentTo": ["OVER"]},
+  "OVER": {"adjacentTo": []}
+};
+
+DocWrite("DAG="+JSON.stringify(DAG));
+
+var ret = ComputeShortPath(DAG, "welecome", "OVER");
+
+DocWrite("distance [welecome, OVER]="+ret.distance);
+
+</script>
+</body>
+</html>
