@@ -5,24 +5,20 @@ var webpack = require('webpack')
 var HtmlWebpackPlugin = require('html-webpack-plugin')
 
 module.exports = {
-  devtool: 'source-map',
-  entry: ['./example/index'],
+  devtool: 'cheap-eval-source-map',
+  entry: [
+    'webpack-dev-server/client?http://localhost:8080',
+    'webpack/hot/dev-server',
+    './src/index'
+  ],
   output: {
-    path: path.join(__dirname, 'dist_example'),
+    path: path.join(__dirname, 'dist'),
     filename: 'bundle.js'
   },
   plugins: [
-    new webpack.optimize.UglifyJsPlugin({
-      compressor: {
-        warnings: false,
-      },
-    }),
-    new webpack.optimize.OccurrenceOrderPlugin(),
+    new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: './example/index.html'
-    }),
-    new webpack.DefinePlugin({
-      'process.env.NODE_ENV': JSON.stringify('production')
+      template: './src/index.html'
     })
   ],
   module: {
@@ -34,5 +30,10 @@ module.exports = {
       loaders: ['babel'],
       include: path.join(__dirname, 'example')
     }]
+  },
+  devServer: {
+    contentBase: './dist',
+    hot: true,
+    inline: true
   }
 }

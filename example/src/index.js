@@ -1,4 +1,6 @@
-import Please from 'pleasejs' // use es6 module import
+
+let Please = require('pleasejs')
+
 require('./styles.css') // The page is now styled
 
 // Accept hot module reloading during development
@@ -15,7 +17,7 @@ const changeColor = () => div.style.backgroundColor = Please.make_color()
 button.addEventListener('click', changeColor)
 
 
-let dijiLib = require("../dist/dijistra.umd.js");
+let dijiLib = require("../../dist/dijistra.umd.js");
 
 function DocWrite(str)
 {
