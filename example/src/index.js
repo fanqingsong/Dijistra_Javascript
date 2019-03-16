@@ -17,7 +17,7 @@ const changeColor = () => div.style.backgroundColor = Please.make_color()
 button.addEventListener('click', changeColor)
 
 
-let dijiLib = require("../../dist/dijistra.umd.js");
+const { DIJISTRA_ALGORITHM } = require("../../dist/dijistra.umd.js");
 
 function DocWrite(str)
 {
@@ -27,16 +27,18 @@ function DocWrite(str)
 
 //有向无环图
 var DAG = {
-  "welecome": {"adjacentTo": ["workmode"]},
-  "workmode": {"adjacentTo": ["WAN", "WLAN"]},
-  "WAN": {"adjacentTo": ["WLAN"]},
-  "WLAN": {"adjacentTo": ["OVER"]},
-  "OVER": {"adjacentTo": []}
+  "welecome": {"adjacentTo": ["service"]},
+  "service": {"adjacentTo": ["phone", "brandband"]},
+  "phone": {"adjacentTo": ["over"]},
+  "brandband": {"adjacentTo": ["over"]},
+  "over": {"adjacentTo": []}
 };
 
 DocWrite("DAG="+JSON.stringify(DAG));
 
-var ret = dijiLib.ComputeShortPath(DAG, "welecome", "OVER");
+let dijistraInstance = new DIJISTRA_ALGORITHM(DAG, "welecome", "OVER");
+
+var ret = dijistraInstance.ComputeShortPath();
 
 DocWrite("distance [welecome, OVER]="+ret.distance);
 

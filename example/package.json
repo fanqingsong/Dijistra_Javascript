@@ -3,6 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
+    "build_lib": "cd .. && webpack --config webpack-config.js",
     "build": "webpack --config webpack.config.prod.example.js",
     "dev": "webpack-dev-server --open --inline --progress --config webpack.config.dev.example.js"
   },
