@@ -1,6 +1,4 @@
 
-let Please = require('pleasejs')
-
 require('./styles.css') // The page is now styled
 
 // Accept hot module reloading during development
@@ -10,14 +8,9 @@ if (process.env.NODE_ENV !== 'production') {
   }
 }
 
-const div = document.getElementById('color')
-const button = document.getElementById('button')
-const changeColor = () => div.style.backgroundColor = Please.make_color()
+//const { DIJISTRA_ALGORITHM } = require("../../dist/dijistra.umd.js");
 
-button.addEventListener('click', changeColor)
-
-
-const { DIJISTRA_ALGORITHM } = require("../../dist/dijistra.umd.js");
+const { DIJISTRA_ALGORITHM } = require("dijistra");
 
 function DocWrite(str)
 {

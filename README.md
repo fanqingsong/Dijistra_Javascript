@@ -1,8 +1,9 @@
 # dijistra algorithm library
 
 ## this project is for develop dijistra library 
+The main module return a dijistra alogrithm Class (DIJISTRA_ALGORITHM)
 
-including api
+including one api temporily
  - [ ] ComputeShortPath
 
 
@@ -12,8 +13,13 @@ including api
 npm install
 npm run build
 
-// see the effect
-npm run dev:example
+// to build the distribution
+npm run build
+
+// to see the usage
+cd example
+npm install
+npm run dev
 ```
 
 # explain
@@ -46,7 +52,6 @@ let dijistraInstance = new DIJISTRA_ALGORITHM(DAG, "welecome", "OVER");
 var ret = dijistraInstance.ComputeShortPath();
 
 DocWrite("distance [welecome, OVER]="+ret.distance);
-
 
 
 ```
