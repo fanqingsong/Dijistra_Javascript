@@ -1,16 +1,20 @@
 {
   "name": "dijistra",
-  "version": "1.0.2",
-  "description": "",
+  "version": "1.0.4",
+  "description": "a simple dijistra implementation of js version",
   "main": "./dist/dijistra.umd.js",
   "scripts": {
     "build": "webpack --config webpack-config.js",
     "publish": "npm publish",
     "lint": "eslint src"
   },
-  "keywords": [],
-  "author": "",
+  "keywords": ["dijistra", "algorithm"],
+  "author": "lightsong",
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/fanqingsong/dijistra_algorithm"
+  },
   "devDependencies": {
     "babel-core": "^6.9.1",
     "babel-eslint": "^6.0.4",
