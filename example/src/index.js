@@ -1,14 +1,10 @@
 
-require('./styles.css') // The page is now styled
-
 // Accept hot module reloading during development
 if (process.env.NODE_ENV !== 'production') {
   if (module.hot) {
     module.hot.accept();
   }
 }
-
-//const { DIJISTRA_ALGORITHM } = require("../../dist/dijistra.umd.js");
 
 const { DIJISTRA_ALGORITHM } = require("dijistra");
 
@@ -29,10 +25,10 @@ var DAG = {
 
 DocWrite("DAG="+JSON.stringify(DAG));
 
-let dijistraInstance = new DIJISTRA_ALGORITHM(DAG, "welecome", "OVER");
+let dijistraInstance = new DIJISTRA_ALGORITHM(DAG, "welecome", "over");
 
 var ret = dijistraInstance.ComputeShortPath();
 
-DocWrite("distance [welecome, OVER]="+ret.distance);
+DocWrite("distance [welecome, over]="+ret.distance);
 
 

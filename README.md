@@ -28,7 +28,7 @@ usage code
 
 ```
 
-const { DIJISTRA_ALGORITHM } = require("../../dist/dijistra.umd.js");
+const { DIJISTRA_ALGORITHM } = require("dijistra");
 
 function DocWrite(str)
 {

@@ -4,8 +4,8 @@
   "description": "",
   "scripts": {
     "build_lib": "cd .. && webpack --config webpack-config.js",
-    "build": "webpack --config webpack.config.prod.example.js",
-    "dev": "webpack-dev-server --open --inline --progress --config webpack.config.dev.example.js"
+    "build": "webpack --config webpack.config.prod.js",
+    "dev": "webpack-dev-server --open --inline --progress --config webpack.config.dev.js"
   },
   "keywords": [],
   "author": "",
